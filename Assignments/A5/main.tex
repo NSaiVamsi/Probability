@@ -1,0 +1,77 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+
+\def\inputGnumericTable{}
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+
+\usepackage{lscape}
+
+
+
+
+\title{Assignment 5 Probability}
+\author{Narsupalli Sai Vamsi}
+\date{June 2022}
+\begin{document}
+\begin{frame}
+\titlepage
+ \begin{abstract}
+     This pdf consists the solution to the question 6.47 from in Papoulis pillai
+ \end{abstract}   
+\end{frame}
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+\section{Question 6.47}
+\begin{frame}{Question 6.47}
+\begin{block}{Q 6.47}
+ The random variables $X_l$ and $X_2$ are jointly normal with zero mean. Show that their density can be written in the form.
+ $$
+ f(x_1,x_2) = \frac{1}{2\pi\sqrt{\Delta}}exp{\left\{-\frac{1}{2}XCX^{-1}\right\}}
+ $$
+ where C is given by $$ C =  \begin{bmatrix}
+ \mu_{11} & \mu_{12} \\
+ \mu_{21} & \mu_{22}
+ \end{bmatrix}$$
+ where $X:[x_1,x_2]$,$\mu_{ij} = E(x_ix_j)$ and $\Delta = \mu_{11}\mu_{22}- {\mu}^2_{12}$
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+\begin{align*}
+ C= \begin{bmatrix}
+{\sigma_1}^2 & r\sigma_1\sigma_2\\
+r\sigma_1\sigma_2 & {\sigma_2}^2 
+\end{bmatrix} && \Delta={\sigma_1}^2{\sigma_2}^2(1-{r}^2) 
+\end{align*}
+\begin{align*}
+    C^{-1}= \begin{bmatrix}
+    \frac{1}{(1-{r}^2){\sigma_1}^2} & \frac{r}{(1-{r}^2){\sigma_1}{\sigma_2}}\\
+    \frac{r}{(1-{r}^2){\sigma_1}{\sigma_2}} & \frac{1}{(1-{r}^2){\sigma_2}^2}
+    \end{bmatrix}
+\end{align*}
+We know that $X : [x_1,x_2]$\\
+$$
+XC^{-1}X^{t} = \frac{1}{(1-{r}^2)}\left(\frac{{x_1}^2}{{\sigma_1}^2} - 2r\frac{x_1x_2}{\sigma_1\sigma_2} + \frac{{x_2}^2}{{\sigma_2}^2}    \right)
+$$   
+
+\end{block}
+\end{frame}
+\end{document}

@@ -1,0 +1,85 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+
+\def\inputGnumericTable{}
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+
+\usepackage{lscape}
+
+
+
+
+\title{Assignment 8 Probability}
+\author{Narsupalli Sai Vamsi}
+\date{June 2022}
+\begin{document}
+\begin{frame}
+\titlepage
+ \begin{abstract}
+     This pdf consists the solution to the question 15.8from in Papoulis pillai
+ \end{abstract}   
+\end{frame}
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+\section{Question 15.8}
+\begin{frame}{Question 15.8}
+\begin{block}{Q 15.8}
+Time Reversible Markov Chains. Consider a stationary Markov chain ...$ x_n,x_{n+1},x_{n+2} \dots$ with transition probabilities $\{p_{ij}\}$ and steady state probabilities $\{q_{ij}\}$. (a) Show that the reversed sequence ...$x_n,x_{n+1},x_{n+2} \dots$  is also a stationary Markov process with transition probabilities
+$$ P\{x_n = j | x_{n+1}=i\} \triangleeq p^*_{ij} = \frac{q_jp_{ij}}{q_i}$$ and steady state probabilities $\{q_i\}$.
+A Markov chain is said to be time reversible if $p^*_{ij} = p_{ij}$
+j for all i. j. (b) Show that a necessary condition for time reversibility is that
+$p_{ij}p_{jk}p_{ki} = p_{ik}p_{kj}p_{ji}$ for all i,j,k
+\end{block}
+\end{frame}
+\section{Question 15.8}
+\begin{frame}{Question 15.8}
+\begin{block}{Q 15.8}
+which states that the transition $e_i \rightarrow e_j \rightarrow e_k \rightarrow e_i$ has the same probability as the reversed transition $e_i \rightarrow e_k \rightarrow e_j \rightarrow e_i$. In fact. for a reversible chain starting at any state ell any path 
+back to e; has the same probability as the reversed path.
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+(a) From Bayes theorem \\
+\begin{equation}
+P\{x_n = j|x_{n+1} = i\} &= \frac{P\{x_{n+1} = i|x_{n} = j\}P\{x_n = j\}}{P\{x_{n+1} = i\}} 
+= \frac{q_jp_{ij}}{q_i} = p^*_{ij},
+\end{equation}
+Where we assumed the chain to be in steady state.
+(b)Notice that time_reversibility is equivalent to\\
+$$p^*_{ij} = p_{ij}$$
+and using (1) we get\\
+\begin{equation}
+p^*_{ij} = \frac{q_jp_{ij}}{q_i} = p_{ij}  
+\end{equation}
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+Thus from using (2) we obtain by direct substitution \\
+$$
+p_{ij}p_{jk}p_{ki} &= \left(\frac{q_j}{q_i}p_{ik}\right)\left(\frac{q_k}{q_j}p_{kj}\right)\left(\frac{q_i}{q_k}p_{ji}\right) \\
+\centering &=  p_{ik}p_{kj}p_{ji}
+$$
+\end{block}
+\end{frame}
+\end{document}

@@ -1,0 +1,143 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+
+\def\inputGnumericTable{}
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+\providecommand{\cbrak}[1]{\ensuremath{\left(#1\right)}}
+\usepackage{lscape}
+
+
+
+
+\title{Assignment 9 Probability}
+\author{Narsupalli Sai Vamsi}
+\date{June 2022}
+\begin{document}
+\begin{frame}
+\titlepage
+ \begin{abstract}
+     This pdf consists the solution to the question 15.15 from in Papoulis pillai
+ \end{abstract}   
+\end{frame}
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+\section{Question 15.15}
+\begin{frame}{Question 15.15}
+\begin{block}{Q 15.15}
+Determine the mean time to absorption for the random walk model in Example 15-25. 
+In the context of the gambler's ruin problem discussed there, show that the mean time to 
+absorption for player A (starting with \$a) reduces to Eq. (3-53). 
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+The mean time to absorption satisfies (15-240). From there\\
+$$m_i = 1+ \sum_{k\in T}^{}p_{ik}m_k = 1+ p_{i,i+1}m_{i+1}+p_{i,i-1}m_{i-1}$$\\
+$$
+m_i = 1 + pm_{i+1} +qm_{i-1}$$\\
+replacing i with k we get\\
+$$m_k = 1 + pm_{k+1} +qm_{k-1}$$\\
+as p+q =1, we can write\\
+$$p(m_{k+1}-m_{k})=q(m_k-m_{k-1}) - 1 $$
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+Let \\
+$$ M_{k+1} = m_{k+1} - m_k$$
+so now we get \\
+
+$$  
+M_{k+1} = \frac{q}{p}M_k - \frac{1}{p}\\
+\implies M_{k+1}= \left({\frac{q}{p}}\right)^k M_1 - \frac{1}{p} \Bigg[1+ \left({\frac{q}{p}}\right)^k+ \left({\frac{q}{p}}\right)^k+ \dots +  \left({\frac{q}{p}}^{k-1}\right)\Big]
+$$
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+From this we get\\ 
+\begin{equation}
+M_{k+1}&=
+& \begin{cases}
+   \left(\frac{q}{p}\right)^k M_1-\frac{1}{p-q}\left\{1-(\frac{q}{p})^k\right\}, &\text{$p \neq q$ }\\
+   M_1 - \frac{k}{p}, & \text{$p = q$}
+\end{cases}
+\end{equation}
+From this we get \\
+$$m_k =\sum_{0}^{i-1} M_{k+1}$$
+\begin{equation}
+  m_k &=
+  & \begin{cases}
+     \left(M_1+ \frac{1}{p-q}\right)\sum_{k=0}^{i-1} \left(\frac{q}{p}\right)^k - \frac{i}{p-q}, & \text{$p \neq q$}\\
+     iM_i - \frac{i(i-1)}{2p}, & \text{$p = q$}
+    \end{cases}
+\end{equation}
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+\begin{equation}
+  m_k &=
+  & \begin{cases}
+     \left(M_1+ \frac{1}{p-q}\right)\ \left(\frac{1-(\frac{q}{p})^i}{1-(\frac{q}{p})}\right) - \frac{i}{p-q}, & \text{$p \neq q$}\\
+     iM_i - \frac{i(i-1)}{2p}, & \text{$p = q$}
+    \end{cases}
+\end{equation}
+where we have used $m_o = 0$.Similarly $m_{a+b} = 0$ gives
+\begin{equation}
+M_1 + \frac{1}{p-q} = \frac{a+b}{p-q}.\frac{1-(\frac{q}{p})^i}{1-(\frac{q}{p})^{a+b}}
+\end{equation}
+ \begin{equation}
+ m_i &=
+  &\begin{cases}
+     \frac{a+b}{p-q}.\frac{1-(\frac{q}{p})^i}{1-(\frac{q}{p})^{a+b}} - \frac{i}{p-q},&\text{$p \neq q$}\\
+     i(a+b-i),&\text{p = q}
+   \end{cases}   
+ \end{equation}   
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+Which gives for i = a\\
+\begin{equation}
+    m_a &=
+    &\begin{cases}
+    \frac{a+b}{p-q}.\frac{1-(\frac{q}{p})^a}{1-(\frac{q}{p})^{a+b}} - \frac{a}{p-q},&\text{$p \neq q$}\\
+     ab,&\text{p = q}
+     \end{cases}\\
+    \centering = \begin{cases}
+      \frac{a}{p-q} - \frac{a+b}{2p-1}.\frac{1-(\frac{p}{q})^a}{1-(\frac{q}{p})^{a+b}}  ,&\text{$p \neq q$}\\
+     ab,&\text{p = q}
+     \end{cases}
+\end{equation}
+by writing\\
+$$
+\frac{1-(\frac{q}{p})^a}{1-(\frac{q}{p})^{a+b}} =
+1-\frac{(\frac{q}{p})^a -(\frac{q}{p})^{a+b}}{1-(\frac{q}{p})^{a+b}} =
+1- \frac{1-(\frac{p}{q})^k}{1-(\frac{p}{q})^{a+b}}
+$$
+\end{block}
+\end{frame}
+\end{document}

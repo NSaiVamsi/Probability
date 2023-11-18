@@ -1,0 +1,63 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+
+\def\inputGnumericTable{}
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+
+\usepackage{lscape}
+
+
+
+
+\title{Assignment 3 Probability}
+\author{Narsupalli Sai Vamsi}
+\date{May 2022}
+
+
+\begin{document}
+
+\begin{frame}
+ \titlepage  
+ \begin{abstract}
+    This pdf consists the solution to the question 2.19 from in Papoulis pillai
+\end{abstract}
+\end{frame}
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+\section{Question2.19}
+\begin{frame}{Question 2.19}
+ (Q2.19) A box contains m white and n black balls. Suppose k balls are drawn. Find the probability of drawing at least one white ball.   
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+   \begin{block}{Solution:}
+     Given that we have m white and n black balls and k balls are drawn from them and we have to find the probability of drawing at least 1 white ball.
+     P(at least 1 white ball) = 1 - P(all the drawn k balls are black)
+   \end{block}
+\end{frame}
+\begin{frame}{Solution}
+\begin{block}{Solution:}
+P(all the drawn k balls are black) = $\frac{\begin{pmatrix} n \\ k\end{pmatrix}}
+{\begin{pmatrix}m+n\\k\end{pmatrix}}$\\
+from this we can say P(at least 1 white ball) =  
+1 - $\frac{\begin{pmatrix}n\\k\end{pmatrix}}{\begin{pmatrix}m+n\\k\end{pmatrix}}$
+\end{block}
+\end{frame}
+\end{document}

@@ -1,0 +1,106 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+
+\def\inputGnumericTable{}
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+
+\usepackage{lscape}
+
+
+
+
+\title{Assignment 4 Probability}
+\author{Narsupalli Sai Vamsi}
+\date{June 2022}
+
+
+\begin{document}
+\begin{frame}
+\titlepage
+ \begin{abstract}
+     This pdf consists the solution to the question 6.46 from in Papoulis pillai
+ \end{abstract}   
+\end{frame}
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+\section{Question 6.46}
+\begin{frame}{Question 6.46}
+ (Q6.46) Let" and y be independent Poisson random variables with parameters $\lambda_1$ and $\lambda_2$ respectively. Show that the conditional density function of x given x + y is binomial 
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+    The moment generating function of X and Y are given by\\
+  $$
+  \Gamma_x{(z)} = e^{\lambda_1(z-1)}
+  $$
+  $$
+  \Gamma_y{(z)} = e^{\lambda_1(z-1)}
+  $$
+  And\\
+  $$
+  \Gamma_{x+y}{(z)} = e^{(\lambda_1+\lambda_2)(z-1)}
+  $$
+  $$
+  Z\sim P(\lambda_1+\lambda_2)
+  $$ 
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+ we know that in poissons distribution\\
+ $$P(X+Y=k) = e^{-(\lambda_1+\lambda_2)} \frac{(\lambda_1+\lambda_2)^k}{k!} $$\\
+ and what we need to find is the conditional function so lets take some k \\
+ $$P(X=k|X+Y=n) = \frac{P(X=k,X+Y=n)}{P(X+Y=n)}
+ = \frac{P(X=k)P(Y=n-k)}{P(X+Y=n)}
+ $$
+ $$
+  =\frac{e^{-\lambda_1}(\lambda_1^k/k!)e^{-\lambda_2}(\lambda_2^{n-k}/(n-k)!)}{e^{-(\lambda_1+\lambda_2)}(\lambda_1+\lambda_2)^n/n!} 
+ $$
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+Here we took k which runs from 0 to n and we need to prove that the distribution is binomial.
+$$
+=
+\begin{pmatrix}
+n\\
+k
+\end{pmatrix}
+\Big(\frac{\lambda_1}{\lambda_1+\lambda_2}\Big)^k \Big(\frac{\lambda_2}{\lambda_1+\lambda_2}\Big)^{n-k}
+$$
+$$
+= 
+\begin{pmatrix}
+n\\
+k
+\end{pmatrix}
+m^k(1-m)^{n-k}
+$$
+Binomial (n,m) where m
+$
+ = \frac{\lambda_1}{\lambda_1+\lambda_2}
+$
+\end{block}
+\end{frame}
+\end{document}

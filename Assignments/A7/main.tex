@@ -1,0 +1,55 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+
+\def\inputGnumericTable{}
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+
+\usepackage{lscape}
+
+
+
+
+\title{Assignment 7 Probability}
+\author{Narsupalli Sai Vamsi}
+\date{June 2022}
+\begin{document}
+\begin{frame}
+\titlepage
+ \begin{abstract}
+     This pdf consists the solution to the question 12.4from in Papoulis pillai
+ \end{abstract}   
+\end{frame}
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+\section{Question 12.4}
+\begin{frame}{Question 12.4}
+\begin{block}{Q 12.4}
+Show that the process $x(t) = a.e^{j(\omega t + \phi)}$ is not correlation-ergodic.
+\end{block}
+\end{frame}
+\section{Solution}
+\begin{frame}{Solution}
+\begin{block}{Solution}
+Given that $x(t) = a.e^{j(\omega t + \phi)}$ then the time average is given by
+$$\frac{1}{2T}\int_{-T}^{T} x(t+\tau)x^{*}(t) = e^{j\omega\tau} a^2$$\\
+As it goes to infinte but not zero it is not correlation-ergodic
+\end{block}
+\end{frame}
+\end{document}

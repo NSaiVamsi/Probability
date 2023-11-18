@@ -1,0 +1,220 @@
+
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+%\RequirePackage{amsmath}
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+% \usepackage{setspace}
+ \usepackage{gensymb}
+%\doublespacing
+ \usepackage{polynom}
+%\singlespacing
+%\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+%\usepackage{graphicx}
+\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+%\usepackage{pifont}
+%\usepackage{iithtlc}
+% \usepackage{mathrsfs}
+% \usepackage{txfonts}
+ \usepackage{stfloats}
+% \usepackage{steinmetz}
+ \usepackage{bm}
+% \usepackage{cite}
+% \usepackage{cases}
+% \usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+ \usepackage{mathtools}
+ \usepackage{tikz}
+% \usepackage{circuitikz}
+% \usepackage{verbatim}
+%\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+%\usepackage{stmaryrd}
+%\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+% \usepackage{multicol}
+% \usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+\DeclareMathOperator*{\equals}{=}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+%\lstset{
+%language=tex,
+%frame=single, 
+%breaklines=true
+%}
+\begin{document}
+
+%
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{ieeetr}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+%\numberwithin{equation}{subsection}
+%\numberwithin{problem}{section}
+%\numberwithin{definition}{section}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+%\renewcommand{\thefigure}{\theproblem.\arabic{figure}}
+\renewcommand{\thefigure}{\theproblem}
+%\setlist[enumerate,1]{before=\renewcommand\theequation{\theenumi.\arabic{equation}}
+%\counterwithin{equation}{enumi}
+%\renewcommand{\theequation}{\arabic{subsection}.\arabic{equation}}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{AI1110 Assignment I (ICSE Class 10 2017)}
+\author{Narsupalli Sai Vamsi (CS21BTECH11038)}
+\date{March 2022}
+% make the title area
+
+\maketitle
+\textbf{Question 1c:} \\
+AB and CD are two parallel chords of a circle such that 
+AB = 24cm and CD = 10cm. if the radius of the circle is 13cm,
+find the distance between the two chords.
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{./fig1.png}
+    \caption{}
+    \label{fig:1}
+\end{figure} \\
+\textbf{Solution} \\
+Let us take O as origin \\
+$\vec{OA}$ is position vector of A, $\vec{OB}$ is position vector of B,
+$\vec{OC}$ is position vector of C, $\vec{OD}$ is position vector of D,
+$\vec{ON}$ is position vector of N, $\vec{OM}$ is position vector of M,\\
+
+The value we have to find is magnitude of \textbf{MN}.
+By using the traingle law of vector addition i.e when two vectors are represented as two sides of the triangle with the order of magnitude and direction, then the third side of the triangle represents the magnitude and direction of the resultant vector.\\
+we can say
+\begin{align}
+$\vec{OA}$ = $\vec{ON}$+$\vec{AN}$\\
+$\vec{OB}$ = $\vec{ON}$+$\vec{BN}$\\
+$\vec{OC}$ = $\vec{OM}$+$\vec{CM}$\\
+$\vec{OD}$ = $\vec{OM}$+$\vec{DM}$\\
+$\vec{MN}$ = $\vec{OM}$-$\vec{ON}$
+\end{align}
+from one of the equations in 1st two , and from one of the other equations in last two we can find the magnitude of $\vec{ON}$,$\vec{OM}$\\
+$\lvert \vec{ON} \rvert$ =$\lvert \vec{OA}-\vec{AN} \rvert$ \\
+$\lvert \vec{OM} \rvert =$\lvert \vec{OC}-\vec{CM} \rvert$ \\
+Given that the radius is 13cm \\
+\implies $\lvert \vec{OA}\rvert$ , $\lvert \vec{OC} \rvert$ = 13cm\\
+We know that perpendicular to a chord of a circle from centre bisects the chord into equal parts. \\
+\implies $\lvert \vec{AN} \rvert$ = 12cm , $\lvert \vec{ON} \rvert = 5cm\\
+\lvert \vec{ON} \rvert = \sqrt {{\lvert \vec{OA} \rvert}^2 - {\lvert \vec{AN} \rvert}^2} \\
+\lvert \vec{ON} \rvert = \sqrt {{13}^2 - {12}^2} \\
+\lvert \vec{ON} \rvert = \sqrt{25}\\
+\lvert \vec{ON} \rvert = 5cm\\
+\lvert \vec{OM} \rvert = \sqrt {{\lvert \vec{OC} \rvert}^2 - {\lvert \vec{CM} \rvert}^2} \\
+\lvert \vec{OM} \rvert = \sqrt{{13}^2 - {5}^2}\\
+\lvert \vec{OM} \rvert = \sqrt{144}\\
+\lvert \vec{OM} \rvert = 12cm\\
+$From equation 0.5 we can say\\
+$\lvert \vec{MN} \rvert =$\lvert \vec{OM}-\vec{ON} \rvert$ \\
+from vector law of subtraction we get \\
+$\lvert \vec{MN} \rvert =$\lvert \vec{OM}\rvert$ + $\lvert \vec{ON}\rvert$ \\
+$\lvert \vec{MN} \rvert = 12 + 5 cm\\
+\implies $\lvert \vec{MN} \rvert = 17cm
+\end{document}
